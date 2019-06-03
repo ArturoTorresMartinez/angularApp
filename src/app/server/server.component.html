@@ -1,1 +1,32 @@
-<p>Server Component</p>
+<p
+  [ngClass]="{
+    online: serverStatus === 'online',
+    offline: serverStatus !== 'online'
+  }"
+>
+  Server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
+
+<label>Name:</label>
+<input type="text" class="form-control" [(ngModel)]="personName" />
+<button
+  class="btn btn-primary"
+  [disabled]="personName === ''"
+  (click)="onReset()"
+>
+  Reset
+</button>
+<hr />
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">
+  Display Details
+</button> -->
+<button class="btn btn-primary" (click)="onToggle()">
+  Display Details
+</button>
+<p *ngIf="showSecret">Super secret secret</p>
+<div
+  *ngFor="let logItem of log"
+  [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+>
+  {{ logItem }}
+</div>
