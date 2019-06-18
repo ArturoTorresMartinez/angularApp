@@ -12,16 +12,18 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       "A test Wrong recipe",
       "Desc",
-      "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg"
+      "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg",
+      []
     ),
     new Recipe(
       "A test Wrong recipe",
       "Desc2",
-      "https://pixnio.com/free-images/2017/05/23/2017-05-23-17-26-29-900x428.jpg"
+      "https://pixnio.com/free-images/2017/05/23/2017-05-23-17-26-29-900x428.jpg",
+      []
     )
   ];
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
